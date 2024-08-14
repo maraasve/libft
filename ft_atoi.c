@@ -6,15 +6,15 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:01:41 by marieke           #+#    #+#             */
-/*   Updated: 2023/10/18 14:18:23 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:05:51 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	number;
+	int			i;
+	int			sign;
+	long int	number;
 
 	i = 0;
 	sign = 1;

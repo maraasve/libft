@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_str_int_range.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:14:49 by marieke           #+#    #+#             */
-/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
+/*   Created: 2024/07/08 12:28:51 by marieke           #+#    #+#             */
+/*   Updated: 2024/07/26 17:48:40 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memchr(void *s, int c, size_t n)
+int	ft_str_int_range(char *str)
 {
-	size_t	i;
+	int	i;
 
+	if (!str | !*str)
+		return (0);
 	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((unsigned char *)s)[i]);
+	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (ft_strlen(&str[i]) > 10)
+		return (0);
+	else if (ft_strlen(&str[i]) < 10)
+		return (1);
+	if (*str == '-')
+	{
+		if (ft_strncmp(&str[i], "2147483648", 10) > 0)
+			return (0);
 	}
-	return (NULL);
+	else
+	{
+		if (ft_strncmp(&str[i], "2147483647", 10) > 0)
+			return (0);
+	}
+	return (1);
 }

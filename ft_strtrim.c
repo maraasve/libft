@@ -6,13 +6,13 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:56:59 by marieke           #+#    #+#             */
-/*   Updated: 2023/10/13 16:48:30 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_trim(char const *s1, char const *set, size_t index)
+static int	count_trim(char *s1, char *set, size_t index)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static int	count_trim(char const *s1, char const *set, size_t index)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	size_t	begin;
 	size_t	end;

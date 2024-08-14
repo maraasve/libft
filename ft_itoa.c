@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:16:51 by maraasve          #+#    #+#             */
-/*   Updated: 2023/10/10 17:50:49 by maraasve         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:32:40 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,6 @@ static int	count_digits(int n)
 		digit_count++;
 	}
 	return (digit_count);
-}
-
-static unsigned int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
 }
 
 char	*ft_itoa(int n)

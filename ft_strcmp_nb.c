@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp_nb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:14:49 by marieke           #+#    #+#             */
-/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
+/*   Created: 2024/02/21 15:53:47 by maraasve          #+#    #+#             */
+/*   Updated: 2024/03/07 16:13:54 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(void *s, int c, size_t n)
+int	ft_strcmp_nb(char *s1, char *s2)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < n)
+	j = 0;
+	if (s1[i] == '+')
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((unsigned char *)s)[i]);
-		i++;
+		if (s2[j] != '+')
+			i++;
 	}
-	return (NULL);
+	else
+	{
+		if (s2[j] == '+')
+			j++;
+	}
+	while (s1[i] && s2[j] && s1[i] == s2[j])
+	{
+		i++;
+		j++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }

@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:50:21 by maraasve          #+#    #+#             */
-/*   Updated: 2023/10/18 14:24:56 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:12:44 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	free_array(char **array)
 	free(array);
 }
 
-static int	count_words(char const *s, char c)
+static int	count_words(char *s, char c)
 {
 	int	word_count;
 	int	flag;
@@ -47,7 +47,7 @@ static int	count_words(char const *s, char c)
 	return (word_count);
 }
 
-static int	len_till_next_del(char const *s, char c)
+static int	len_till_next_del(char *s, char c)
 {
 	int	word_len;
 
@@ -59,7 +59,7 @@ static int	len_till_next_del(char const *s, char c)
 	return (word_len);
 }
 
-char	**splitting(char **array, char const *s, char c)
+char	**splitting(char **array, char *s, char c)
 {
 	int		s_index;
 	int		array_index;
@@ -86,7 +86,7 @@ char	**splitting(char **array, char const *s, char c)
 	return (array);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**array;
 	int		word_count;

@@ -6,17 +6,19 @@
 /*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 13:37:22 by maraasve          #+#    #+#             */
-/*   Updated: 2023/10/09 16:35:37 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/26 12:33:09 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t	len;
 
 	len = 0;
+	if (!s)
+		return (len);
 	while (s[len] != '\0')
 	{
 		len++;

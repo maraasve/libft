@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_is_str_nb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:14:49 by marieke           #+#    #+#             */
-/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
+/*   Created: 2024/07/08 11:56:19 by marieke           #+#    #+#             */
+/*   Updated: 2024/07/25 12:24:00 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+int	ft_is_str_nb(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	if (!str || !*str)
+		return (0);
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((unsigned char *)s)[i]);
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
-	return (NULL);
+	return (1);
 }

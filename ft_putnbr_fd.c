@@ -6,18 +6,11 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:28:38 by marieke           #+#    #+#             */
-/*   Updated: 2023/10/10 13:50:05 by maraasve         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:12:30 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static unsigned int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {

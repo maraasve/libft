@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:14:49 by marieke           #+#    #+#             */
-/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
+/*   Created: 2023/11/07 15:20:50 by maraasve          #+#    #+#             */
+/*   Updated: 2023/11/28 14:43:49 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+void	*ft_realloc(void *p1, size_t old, size_t new)
 {
-	size_t	i;
+	void	*p2;
 
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((unsigned char *)s)[i]);
-		i++;
-	}
-	return (NULL);
+	if (!p1)
+		p1 = (void *)malloc(new * sizeof(char));
+	p2 = (void *)malloc(new * sizeof(char));
+	if (new > old)
+		ft_memcpy(p2, p1, old);
+	else
+		ft_memcpy(p2, p1, new);
+	free(p1);
+	return (p2);
 }

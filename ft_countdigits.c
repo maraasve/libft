@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_countdigits.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:14:49 by marieke           #+#    #+#             */
-/*   Updated: 2024/01/29 12:43:54 by maraasve         ###   ########.fr       */
+/*   Created: 2023/11/09 20:57:02 by marieke           #+#    #+#             */
+/*   Updated: 2023/11/09 21:03:02 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+size_t	ft_countdigits(size_t num)
 {
-	size_t	i;
+	int	count;
 
-	i = 0;
-	while (i < n)
+	count = 0;
+	while (num != 0)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((unsigned char *)s)[i]);
-		i++;
+		num /= 10;
+		count++;
 	}
-	return (NULL);
+	return (count);
 }
