@@ -1,6 +1,6 @@
 # 📚 libft
 
-`libft` is a personal implementation of standard C library functions, created as part of the 42 curriculum. It includes commonly used functions for memory handling, string manipulation, character checks, list handling, and more — all written from scratch in C.
+`libft` is a personal implementation of standard C library functions, created as part of the 42 curriculum. It includes commonly used functions for memory handling, string manipulation, character checks, list handling, and more. Everything is written from scratch in C.
 
 ---
 
